@@ -69,6 +69,9 @@ with Pipeline(name='gpsr-synthetic-data', description='generate synthetic data f
             #model="llama3-8b-8192",
             model_id='meta-llama/Meta-Llama-3-8B-Instruct',
             tokenizer_id='meta-llama/Meta-Llama-3-8B-Instruct',
+            model_kwargs={
+                'load_in_4bit': True
+            },
             structured_output={
                 #'format': 'json',
                 'schema': SequentialStateMachine.model_json_schema()
